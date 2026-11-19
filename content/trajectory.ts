@@ -84,7 +84,7 @@ export const terms: Term[] = [
     term: "Fall 2026",
     courses: "Statistical Neuroscience (graduate); Computational Probability and Statistics; Multivariable Calculus with Theory; Structure of the Nervous System; Genetics",
     made: ["Directed Reading Program project"],
-    also: ["NEMIC Health Innovator Pathways fellow; MAPS peer mentor; attended NYBCI 2026; co-founding Brown Neurotech, launching spring 2027"],
+    also: ["Joined the Radiation Physics Instrumentation Lab at Massachusetts General Hospital (October); NEMIC Health Innovator Pathways fellow; MAPS peer mentor; attended NYBCI 2026; co-founding Brown Neurotech, launching spring 2027"],
     thread: ["converges on BCI"],
     threads: threads,
   },

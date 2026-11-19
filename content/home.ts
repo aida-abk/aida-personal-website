@@ -20,7 +20,7 @@ export const today = {
 
 // Two paragraphs. In the second, the words in `link` point to the Trajectory page.
 export const background = [
-  { text: "I'm from Kazakhstan, where I competed in robotics and math olympiads. I came to Brown to study neuroscience and found I liked the math as much." },
+  { text: "In high school I competed in robotics and math olympiads. I came to Brown to study neuroscience and found I liked the math as much." },
   {
     text: "Since then I have worked in a 3D perception lab, built the MRI processing pipeline for a hospital lab, and spent a summer at the Carney Institute fitting sparse dynamical models to cortical recordings. In fall 2026 these lines met at brain-computer interfaces.",
     link: "these lines",

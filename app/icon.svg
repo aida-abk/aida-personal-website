@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- The site icon: the capital A of Prata, the typeface of the name on Home,
+       drawn as an outline so it needs no font. Colours are the site's ground,
+       white and accent. -->
+  <rect width="32" height="32" fill="#0e0e0d"/>
+  <path transform="translate(5.15 26) scale(0.0232 -0.0232)" fill="#f5f3ee" d="M-28 0V21L70 61L359 820H375L648 36L740 21V0H446V21L528 34L443 271H177L96 61L186 21V0ZM185 292H436L316 644Z"/>
+  <rect x="24" y="22.5" width="3.5" height="3.5" fill="#14dca0"/>
+</svg>

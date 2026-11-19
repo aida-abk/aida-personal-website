@@ -1,0 +1,47 @@
+/* Palette: the black ground and white figures of Aida's slides, and the
+   mid-grey of a psychophysics display for secondary text. The one accent is
+   the colour FreeSurfer gives the superior frontal cortex in the atlas on the
+   Home page. All other colour on the site comes from that atlas. */
+:root {
+  --ground: #0e0e0d; /* slide black */
+  --white: #f5f3ee;  /* figure white */
+  --grey: #a9a9a9;   /* display grey, for labels and secondary text */
+  --accent: #14dca0; /* atlas: superior frontal */
+  --line: 14px;      /* the white lines of the Hermann grid */
+  --wide: 1040px;    /* the width the grid and every page share */
+  /* The Greek face comes first but only holds Greek letters, so everything
+     else falls through to the text face. */
+  --text: "GFS Didot", var(--font-text), sans-serif;
+  --mono: var(--font-mono), monospace;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; background: var(--ground); }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--white);
+  font-family: var(--text);
+  font-size: 18px;
+  line-height: 1.55;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, p, ul, ol { margin: 0; padding: 0; font-weight: 400; }
+ul, ol { list-style: none; }
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+/* On hover a second, heavier line draws in under the link from the left. */
+a {
+  background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0 2px;
+}
+a:hover { background-size: 100% 2px; }
+@media (prefers-reduced-motion: no-preference) {
+  a { transition: background-size 0.25s ease-out; }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+::selection { background: var(--white); color: var(--ground); }
+@media (max-width: 560px) { body { font-size: 17px; } }

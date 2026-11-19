@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 818" width="760" height="818" role="img" aria-labelledby="t d" xmlns:c2pa="http://c2pa.org/manifest">
+<title id="t">Subject-ID portal and structural MRI pipeline</title>
+<desc id="d">A single subject ID, generated once by the subject-ID portal, is carried unchanged from enrolment through the MRI scan, XNAT, BIDS conversion, T1 staging, batch FreeSurfer recon-all and an automated completion check. The portal writes to Google Sheets and cross-checks XNAT to flag missing records. No subject data is shown.</desc>
+<defs><marker id="tA" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0 0L10 5L0 10z" class="tf"/></marker>
+<marker id="fA" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ff"/></marker>
+<marker id="kA" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1D1B18"/></marker></defs>
+<style>
+.paper{fill:var(--fig-paper,#F6F1E7)}
+.box{fill:var(--fig-paper,#F6F1E7);stroke:var(--fig-ink,#1D1B18);stroke-width:1.3}
+.flagbox{fill:var(--fig-paper,#F6F1E7);stroke:var(--fig-flag,#B23A2B);stroke-width:1.6}
+.dash{fill:var(--fig-paper,#F6F1E7);stroke:var(--fig-ink,#1D1B18);stroke-width:1.2;stroke-dasharray:5 4}
+.thread{fill:none;stroke:var(--fig-thread,#2B3F9E);stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}
+.flagline{fill:none;stroke:var(--fig-flag,#B23A2B);stroke-width:1.5;stroke-dasharray:5 4}
+.link{fill:none;stroke:var(--fig-ink,#1D1B18);stroke-width:1.2}
+.cell{fill:none;stroke:var(--fig-ink,#1D1B18);stroke-width:.9}
+.idcell{fill:none;stroke:var(--fig-thread,#2B3F9E);stroke-width:1.3}
+text{fill:var(--fig-ink,#1D1B18)}
+.lab{font-family:var(--fig-mono,'PT Mono',ui-monospace,Menlo,monospace);font-size:11px;letter-spacing:.09em;fill:var(--fig-graphite,#6F6A60)}
+.name{font-family:var(--fig-serif,'PT Serif',Georgia,serif);font-size:18px;font-weight:700}
+.sub{font-family:var(--fig-serif,'PT Serif',Georgia,serif);font-size:13.5px}
+.mono{font-family:var(--fig-mono,'PT Mono',ui-monospace,Menlo,monospace);font-size:12px}
+.id{font-family:var(--fig-mono,'PT Mono',ui-monospace,Menlo,monospace);font-size:12px;fill:var(--fig-thread,#2B3F9E)}
+.idbig{font-family:var(--fig-mono,'PT Mono',ui-monospace,Menlo,monospace);font-size:22px;fill:var(--fig-thread,#2B3F9E)}
+.flag{fill:var(--fig-flag,#B23A2B)}
+.tf{fill:var(--fig-thread,#2B3F9E)} .ff{fill:var(--fig-flag,#B23A2B)}
+</style>
+<rect width="760" height="818" class="paper"/>
+<path d="M216 126 L255 126" class="thread" marker-end="url(#tA)"/>
+<path d="M417 224 L417 254 L115 254 L115 294" class="thread" marker-end="url(#tA)"/>
+<path d="M210 350 L259 350" class="thread" marker-end="url(#tA)"/>
+<path d="M362 402 L362 434 L104 434 L104 476" class="thread" marker-end="url(#tA)"/>
+<path d="M188 542 L227 542" class="thread" marker-end="url(#tA)"/>
+<path d="M398 542 L437 542" class="thread" marker-end="url(#tA)"/>
+<path d="M700 604 L700 654 L130 654 L130 686" class="thread" marker-end="url(#tA)"/>
+<path d="M240 742 L279 742" class="thread" marker-end="url(#tA)"/>
+<rect x="20" y="76" width="196" height="100" class="box"/>
+<text x="32" y="97" class="lab" text-anchor="start">RECRUITING + SCANNING</text>
+<text x="32" y="121" class="name" text-anchor="start">15+ people</text>
+<text x="32" y="140" class="sub" text-anchor="start">enrol a participant</text>
+<rect x="258" y="28" width="318" height="196" class="box"/>
+<rect x="258" y="28" width="318" height="5" class="tf"/>
+<text x="270" y="54" class="lab" text-anchor="start">SUBJECT-ID PORTAL</text>
+<text x="270" y="78" class="name" text-anchor="start">One place an ID is made</text>
+<text x="270" y="97" class="sub" text-anchor="start">Google Apps Script + JavaScript</text>
+<rect x="270" y="114" width="64" height="36" class="idcell"/>
+<text x="302.0" y="139" class="idbig" text-anchor="middle">sub-</text>
+<text x="302.0" y="165" class="lab" text-anchor="middle" style="letter-spacing:.04em">prefix</text>
+<rect x="339" y="114" width="40" height="36" class="idcell"/>
+<text x="359.0" y="139" class="idbig" text-anchor="middle">pd</text>
+<text x="359.0" y="165" class="lab" text-anchor="middle" style="letter-spacing:.04em">group</text>
+<rect x="384" y="114" width="54" height="36" class="idcell"/>
+<text x="411.0" y="139" class="idbig" text-anchor="middle">###</text>
+<text x="411.0" y="165" class="lab" text-anchor="middle" style="letter-spacing:.04em">number</text>
+<text x="453" y="130" class="lab" text-anchor="start" style="letter-spacing:.02em">group is one of</text>
+<text x="453" y="147" class="mono" text-anchor="start">c, pd, et, dip</text>
+<text x="270" y="190" class="sub" text-anchor="start">Generates a compliant ID for each</text>
+<text x="270" y="208" class="sub" text-anchor="start">new subject.</text>
+<rect x="618" y="76" width="122" height="100" class="box"/>
+<text x="630" y="97" class="lab" text-anchor="start">GOOGLE SHEETS</text>
+<text x="630" y="121" class="name" text-anchor="start">Enrolment</text>
+<text x="630" y="140" class="sub" text-anchor="start">record</text>
+<path d="M580 126 L614 126" class="link" marker-end="url(#kA)" marker-start="url(#kA)"/>
+<rect x="20" y="298" width="190" height="104" class="box"/>
+<text x="32" y="319" class="lab" text-anchor="start">MRI SESSION</text>
+<text x="32" y="343" class="name" text-anchor="start">Scan</text>
+<text x="32" y="362" class="sub" text-anchor="start">filed under the same ID</text>
+<rect x="262" y="298" width="200" height="104" class="box"/>
+<text x="274" y="319" class="lab" text-anchor="start">IMAGING DATABASE</text>
+<text x="274" y="343" class="name" text-anchor="start">XNAT</text>
+<text x="274" y="362" class="sub" text-anchor="start">raw scans, by session</text>
+<text x="256" y="248" class="id" text-anchor="middle">sub-pd###</text>
+<path d="M679 176 L679 350 L466 350" class="flagline" marker-end="url(#fA)"/>
+<text x="486" y="338" class="mono flag" text-anchor="start">cross-check</text>
+<text x="486" y="370" class="mono flag" text-anchor="start">flags missing records</text>
+<rect x="20" y="480" width="168" height="124" class="box"/>
+<text x="32" y="501" class="lab" text-anchor="start">ON OSCAR HPC</text>
+<text x="32" y="525" class="name" text-anchor="start">XNAT2BIDS</text>
+<text x="32" y="544" class="sub" text-anchor="start">download, convert</text>
+<text x="32" y="563" class="sub" text-anchor="start">to BIDS</text>
+<text x="21" y="621" class="mono"><tspan class="lab" style="letter-spacing:0;font-size:12px">bids/</tspan><tspan class="tf">sub-pd###</tspan><tspan class="lab" style="letter-spacing:0;font-size:12px">/</tspan></text>
+<rect x="230" y="480" width="168" height="124" class="box"/>
+<text x="242" y="501" class="lab" text-anchor="start">LINK ONE T1 EACH</text>
+<text x="242" y="525" class="name" text-anchor="start">T1 staging</text>
+<text x="242" y="544" class="sub" text-anchor="start">one folder,</text>
+<text x="242" y="563" class="sub" text-anchor="start">one file per subject</text>
+<text x="231" y="621" class="mono"><tspan class="lab" style="letter-spacing:0;font-size:12px"></tspan><tspan class="tf">sub-pd###</tspan><tspan class="lab" style="letter-spacing:0;font-size:12px">_T1w.nii.gz</tspan></text>
+<rect x="440" y="480" width="300" height="124" class="box"/>
+<rect x="452" y="494" width="7" height="7" class="cell"/>
+<rect x="452" y="503" width="7" height="7" class="cell"/>
+<rect x="452" y="512" width="7" height="7" class="cell"/>
+<rect x="452" y="521" width="7" height="7" class="cell"/>
+<rect x="452" y="530" width="7" height="7" class="cell"/>
+<rect x="452" y="539" width="7" height="7" class="cell"/>
+<rect x="452" y="548" width="7" height="7" class="cell"/>
+<rect x="452" y="557" width="7" height="7" class="cell"/>
+<rect x="452" y="566" width="7" height="7" class="cell"/>
+<rect x="452" y="575" width="7" height="7" class="cell"/>
+<rect x="461" y="494" width="7" height="7" class="cell"/>
+<rect x="461" y="503" width="7" height="7" class="cell"/>
+<rect x="461" y="512" width="7" height="7" class="cell"/>
+<rect x="461" y="521" width="7" height="7" class="cell"/>
+<rect x="461" y="530" width="7" height="7" class="cell"/>
+<rect x="461" y="539" width="7" height="7" class="cell"/>
+<rect x="461" y="548" width="7" height="7" class="cell"/>
+<rect x="461" y="557" width="7" height="7" class="cell"/>
+<rect x="461" y="566" width="7" height="7" class="cell"/>
+<rect x="461" y="575" width="7" height="7" class="cell"/>
+<rect x="470" y="494" width="7" height="7" class="cell"/>
+<rect x="470" y="503" width="7" height="7" class="cell"/>
+<rect x="470" y="512" width="7" height="7" class="cell"/>
+<rect x="470" y="521" width="7" height="7" class="cell"/>
+<rect x="470" y="530" width="7" height="7" class="cell"/>
+<rect x="470" y="539" width="7" height="7" class="cell"/>
+<rect x="470" y="548" width="7" height="7" class="cell"/>
+<rect x="470" y="557" width="7" height="7" class="cell"/>
+<rect x="470" y="566" width="7" height="7" class="cell"/>
+<rect x="470" y="575" width="7" height="7" class="cell"/>
+<rect x="479" y="494" width="7" height="7" class="cell"/>
+<rect x="479" y="503" width="7" height="7" class="cell"/>
+<rect x="479" y="512" width="7" height="7" class="cell"/>
+<rect x="479" y="521" width="7" height="7" class="cell"/>
+<rect x="479" y="530" width="7" height="7" class="cell"/>
+<rect x="479" y="539" width="7" height="7" class="cell"/>
+<rect x="479" y="548" width="7" height="7" class="cell"/>
+<rect x="479" y="557" width="7" height="7" class="cell"/>
+<rect x="479" y="566" width="7" height="7" class="cell"/>
+<rect x="479" y="575" width="7" height="7" class="cell"/>
+<rect x="488" y="494" width="7" height="7" class="cell"/>
+<rect x="488" y="503" width="7" height="7" class="cell"/>
+<rect x="488" y="512" width="7" height="7" class="cell"/>
+<rect x="488" y="521" width="7" height="7" class="cell"/>
+<rect x="488" y="530" width="7" height="7" class="cell"/>
+<rect x="488" y="539" width="7" height="7" class="cell"/>
+<rect x="488" y="548" width="7" height="7" class="cell"/>
+<rect x="488" y="557" width="7" height="7" class="cell"/>
+<rect x="488" y="566" width="7" height="7" class="cell"/>
+<rect x="488" y="575" width="7" height="7" class="cell"/>
+<rect x="497" y="494" width="7" height="7" class="cell"/>
+<rect x="497" y="503" width="7" height="7" class="cell"/>
+<rect x="497" y="512" width="7" height="7" class="cell"/>
+<rect x="497" y="521" width="7" height="7" class="cell"/>
+<rect x="497" y="530" width="7" height="7" class="cell"/>
+<rect x="497" y="539" width="7" height="7" class="cell"/>
+<rect x="497" y="548" width="7" height="7" class="cell"/>
+<rect x="497" y="557" width="7" height="7" class="cell"/>
+<rect x="497" y="566" width="7" height="7" class="cell"/>
+<rect x="497" y="575" width="7" height="7" class="cell"/>
+<rect x="506" y="494" width="7" height="7" class="cell"/>
+<rect x="506" y="503" width="7" height="7" class="cell"/>
+<rect x="506" y="512" width="7" height="7" class="cell"/>
+<rect x="506" y="521" width="7" height="7" class="cell"/>
+<rect x="506" y="530" width="7" height="7" class="cell"/>
+<rect x="506" y="539" width="7" height="7" class="cell"/>
+<rect x="506" y="548" width="7" height="7" class="cell"/>
+<rect x="506" y="557" width="7" height="7" class="cell"/>
+<rect x="506" y="566" width="7" height="7" class="cell"/>
+<rect x="506" y="575" width="7" height="7" class="cell"/>
+<rect x="515" y="494" width="7" height="7" class="cell"/>
+<rect x="515" y="503" width="7" height="7" class="cell"/>
+<rect x="515" y="512" width="7" height="7" class="cell"/>
+<rect x="515" y="521" width="7" height="7" class="cell"/>
+<rect x="515" y="530" width="7" height="7" class="cell"/>
+<rect x="515" y="539" width="7" height="7" class="cell"/>
+<rect x="515" y="548" width="7" height="7" class="cell"/>
+<rect x="515" y="557" width="7" height="7" class="cell"/>
+<rect x="515" y="566" width="7" height="7" class="cell"/>
+<rect x="515" y="575" width="7" height="7" class="cell"/>
+<rect x="524" y="494" width="7" height="7" class="cell"/>
+<rect x="524" y="503" width="7" height="7" class="cell"/>
+<rect x="524" y="512" width="7" height="7" class="cell"/>
+<rect x="524" y="521" width="7" height="7" class="cell"/>
+<rect x="524" y="530" width="7" height="7" class="cell"/>
+<rect x="524" y="539" width="7" height="7" class="cell"/>
+<rect x="524" y="548" width="7" height="7" class="cell"/>
+<rect x="524" y="557" width="7" height="7" class="cell"/>
+<rect x="524" y="566" width="7" height="7" class="cell"/>
+<rect x="524" y="575" width="7" height="7" class="cell"/>
+<rect x="533" y="494" width="7" height="7" class="cell"/>
+<rect x="533" y="503" width="7" height="7" class="cell"/>
+<rect x="533" y="512" width="7" height="7" class="cell"/>
+<rect x="533" y="521" width="7" height="7" class="cell"/>
+<rect x="533" y="530" width="7" height="7" class="cell"/>
+<rect x="533" y="539" width="7" height="7" class="cell"/>
+<rect x="533" y="548" width="7" height="7" class="cell"/>
+<rect x="533" y="557" width="7" height="7" class="cell"/>
+<rect x="533" y="566" width="7" height="7" class="cell"/>
+<rect x="533" y="575" width="7" height="7" class="cell"/>
+<text x="554" y="501" class="lab" text-anchor="start">BATCH SUBMISSION</text>
+<text x="554" y="525" class="name" text-anchor="start">FreeSurfer</text>
+<text x="554" y="546" class="name" text-anchor="start">recon-all</text>
+<text x="554" y="567" class="sub" text-anchor="start">about 100 subjects,</text>
+<text x="554" y="585" class="sub" text-anchor="start">one SLURM array task each</text>
+<text x="441" y="621" class="mono"><tspan class="lab" style="letter-spacing:0;font-size:12px">procsubj/</tspan><tspan class="tf">sub-pd###</tspan><tspan class="lab" style="letter-spacing:0;font-size:12px">/</tspan></text>
+<text x="233" y="428" class="id" text-anchor="middle">sub-pd###</text>
+<rect x="20" y="690" width="220" height="104" class="flagbox"/>
+<text x="32" y="711" class="lab" text-anchor="start">AUTOMATED STAGE</text>
+<text x="32" y="735" class="name" text-anchor="start">Completion check</text>
+<text x="32" y="754" class="sub" text-anchor="start">verifies recon-all finished</text>
+<rect x="282" y="690" width="170" height="104" class="box"/>
+<text x="294" y="711" class="lab" text-anchor="start">OUTPUT</text>
+<text x="294" y="735" class="name" text-anchor="start">Lab analyses</text>
+<text x="294" y="754" class="sub" text-anchor="start">thickness, volumes,</text>
+<text x="294" y="773" class="sub" text-anchor="start">surfaces</text>
+<text x="360" y="648" class="id" text-anchor="middle">sub-pd###</text>
+<rect x="494" y="690" width="246" height="104" class="dash"/>
+<text x="506" y="711" class="lab" text-anchor="start">SAME IDS, SEPARATE PIPELINE</text>
+<text x="506" y="735" class="name" text-anchor="start">ENIGMA Consortium</text>
+<text x="506" y="754" class="sub" text-anchor="start">Nipoppy pipelines, about 65</text>
+<text x="506" y="772" class="sub" text-anchor="start">subjects, 16 universities</text>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTplNWM0NTIyYS0wYTIyLTRhZTMtYjU5ZS04MjRiYmI4YTc2YjMAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaF6ZbXKlgRUz75w8GtfSMLYAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo0Mjk2ODc0MC1jNGM3LTQ4Y2EtYjEzNC03MDk1ZWQ2MGUwZDJscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoNb+akl0RY/TJkFYTw5MBYwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg4qrTeeS80YdU2oyHi2EKwMKQ1mqY/5hBz44H59gdvtikZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaK2nKeaLo0wYxh6zlMMKfggAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYINocRuSOUkZa1qmoXLaYncGYjx5wq0Sm36X6kpVXeB1qZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GTrHZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmU1YzQ1MjJhLTBhMjItNGFlMy1iNTllLTgyNGJiYjhhNzZiMy9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmVhYWIzOWY5LTc2ZDEtNGUxYy1hYTRmLTkxOWZkMWMzOTE0NHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDiqtN55LzRh1TajIeLYQrAwpDWapj/mEHPjgfn2B2+2KJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggKrFN/ybl//4EGlL6rbX7RRogtrF5rooo5DddoCy6MMiiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggNAqiq/N2HEwR/j8dbmXETlRok99+BXvXGK/qy1zTkn50Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQOxCWR6SQ8KtXEteIVbYxxomgm5Z/lEBz+BRlsHCT9FJytWGSPFSfUzqh5K79pQhf7zZmSJJGgN0Ypj3upsOB9M=</c2pa:manifest></metadata></svg>

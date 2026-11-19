@@ -1,0 +1,25 @@
+/* Stream of Thoughts. On Home, the notes sit along one white line, alternately
+   above and below it, newest at the left; the strip scrolls sideways. */
+.scroll { overflow-x: auto; padding-bottom: 14px; scrollbar-color: var(--grey) transparent; }
+.trace { list-style: none; display: grid; grid-auto-flow: column; grid-auto-columns: max-content; grid-template-rows: auto auto auto; width: max-content; }
+.trace li { display: grid; grid-row: 1 / 4; grid-template-rows: subgrid; padding-right: 28px; }
+.trace p { font-size: 0.98em; line-height: 1.38; }
+.above p { grid-row: 1; align-self: end; padding-bottom: 14px; }
+.below p { grid-row: 3; padding-top: 4px; }
+.tick, .date { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey); }
+.tick { grid-row: 2; position: relative; margin-right: -28px; padding: 9px 0 9px 12px; border-top: 2px solid var(--white); white-space: nowrap; }
+.tick::before { content: ""; position: absolute; left: 0; top: -9px; width: 2px; height: 18px; background: var(--white); }
+.w1 { width: 15em; } .w2 { width: 21em; } .w3 { width: 34em; } .w4 { width: 60em; }
+.w3 p, .w4 p { font-size: 0.9em; line-height: 1.45; }
+
+/* On the Stream page: one row per entry, ruled off by a white line, the date
+   in the left column and the text in a reading column. */
+.list { list-style: none; }
+.list li { display: grid; grid-template-columns: 9em minmax(0, 34em); gap: 0 24px; padding: 18px 0; border-top: 2px solid var(--white); }
+.date { padding-top: 0.35em; }
+.title { font-size: 1.3em; font-weight: 600; }
+
+@media (max-width: 760px) {
+  .w1 { width: 13em; } .w2 { width: 17em; } .w3 { width: 19em; } .w4 { width: 21em; }
+  .list li { grid-template-columns: 1fr; gap: 6px; }
+}

@@ -1,0 +1,178 @@
+/* Shared by the five subpages. Same width as the Home grid; the text sits in
+   a reading column of about 68 characters. */
+.page { max-width: var(--wide); margin: 0 auto; padding: 0 24px 96px; }
+.column { max-width: 34em; }
+
+/* The running head: the name in its own face, as on Home, and the chapter in
+   the text face. */
+.runningHead {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+  padding: 20px 0 12px; border-bottom: 2px solid var(--white);
+  font-size: 15px; color: var(--grey);
+}
+.runningHead a { font-family: var(--font-name), serif; font-size: 22px; line-height: 1.1; color: var(--white); text-decoration: none; background: none; }
+.runningHead a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+
+.opening { padding: clamp(48px, 10vh, 96px) 0 clamp(32px, 6vh, 56px); }
+.numeral { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.08em; color: var(--grey); }
+.title { font-size: clamp(2.2em, 6vw, 3.6em); line-height: 1.05; font-weight: 600; letter-spacing: -0.01em; margin-top: 10px; text-wrap: balance; }
+
+/* The contents as one row of the Home grid: black squares on white lines.
+   The square of the chapter being read is left white. */
+.foot { margin-top: 96px; background: var(--white); padding: 10px; }
+.foot ol { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.foot li > * {
+  height: 100%; min-height: 104px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+  background: var(--ground); color: var(--white); text-decoration: none; font-weight: 600; line-height: 1.15;
+}
+.foot li > [aria-current] { background: none; color: var(--ground); }
+.foot a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.18em; }
+.footNumeral { font-family: var(--mono); font-size: 12.5px; font-weight: 400; letter-spacing: 0.08em; color: var(--grey); }
+.foot [aria-current] .footNumeral { color: #5c5c5c; }
+
+/* Building blocks the pages use. */
+.label { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey); }
+.prose p + p { margin-top: 0.9em; }
+
+.block { padding: 30px 0; border-top: 1px solid color-mix(in srgb, var(--white) 22%, transparent); }
+.block:first-child { border-top: 0; padding-top: 0; }
+.heading { font-size: 1.3em; line-height: 1.25; font-weight: 600; text-wrap: balance; }
+.meta { color: var(--grey); line-height: 1.45; margin-top: 4px; }
+
+/* Label on the left, text on the right; stacked on a phone. */
+.fields { display: grid; grid-template-columns: 9.5em 1fr; gap: 12px 18px; margin: 18px 0 0; line-height: 1.5; }
+.fields dt { padding-top: 0.36em; line-height: 1.4; }
+.figure { margin: 0 0 8px; }
+.figure img { display: block; width: 100%; height: auto; border: 1px solid color-mix(in srgb, var(--white) 22%, transparent); background: #fff; }
+/* A diagram drawn in dark ink: set on the white of the grid's lines, in the
+   site's own typefaces. Wide layout on a desktop column, narrow on a phone. */
+.diagram { background: var(--white); padding: clamp(12px, 3vw, 28px); --fig-mono: var(--font-mono); --fig-serif: var(--text); }
+.diagram svg { display: block; width: 100%; height: auto; }
+.diagramNarrow { display: none; max-width: 400px; margin: 0 auto; }
+@media (max-width: 620px) { .diagramWide { display: none; } .diagramNarrow { display: block; } }
+.figure figcaption { margin-top: 6px; font-size: 0.85em; line-height: 1.45; color: var(--grey); }
+.fields dd { margin: 0; min-width: 0; overflow-wrap: break-word; }
+.dashes { display: grid; gap: 8px; }
+.dashes li { padding-left: 1.2em; position: relative; }
+.dashes li::before { content: "–"; position: absolute; left: 0; color: var(--grey); }
+
+.section { margin-top: 56px; }
+.section > h2 { margin-bottom: 12px; }
+.books { display: grid; gap: 4px; }
+.books li { line-height: 1.45; padding: 3px 0; }
+.year { margin-top: 18px; line-height: 1.55; }
+.year h3 { font-weight: 600; font-size: 1em; }
+
+.cards { margin-top: 64px; padding-top: 36px; border-top: 2px solid var(--white); display: grid; gap: 26px; }
+.cards h2 { font-size: 1.08em; line-height: 1.3; font-weight: 600; }
+.cards p:last-child { line-height: 1.5; margin-top: 6px; }
+.notes { margin-top: 48px; display: grid; gap: 12px; }
+
+@media (max-width: 560px) {
+  .page { padding: 0 20px 72px; }
+  .fields { grid-template-columns: 1fr; gap: 2px; }
+  .fields dt { padding-top: 12px; }
+  .foot ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .foot li > * { min-height: 76px; }
+}
+
+/* Trajectory: thread buttons and terms that open and close. */
+.threads { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-bottom: 28px; }
+.threads > .label { margin-right: 6px; }
+.threadButton {
+  font: inherit; font-size: 0.85em; line-height: 1.3; color: var(--white); background: none;
+  border: 1px solid color-mix(in srgb, var(--white) 40%, transparent); border-radius: 0;
+  padding: 5px 11px; cursor: pointer;
+}
+.threadButton:hover { border-color: var(--white); }
+.threadButton[aria-pressed="true"] { background: var(--white); color: var(--ground); border-color: var(--white); }
+
+.term { border-top: 1px solid color-mix(in srgb, var(--white) 22%, transparent); transition: opacity 0.2s; }
+.term:last-child { border-bottom: 1px solid color-mix(in srgb, var(--white) 22%, transparent); }
+.term.faded { opacity: 0.3; }
+.term summary { list-style: none; cursor: pointer; padding: 18px 1.6em 18px 0; position: relative; display: grid; gap: 4px; }
+.term summary::-webkit-details-marker { display: none; }
+/* The plus is two strokes; the upright one turns flat when the term opens. */
+.term summary::before, .term summary::after {
+  content: ""; position: absolute; right: 0; top: 34px; width: 15px; height: 1.5px; background: var(--grey);
+}
+.term summary::after { transform: rotate(90deg); }
+.term[open] summary::after { transform: rotate(0deg); }
+.termHead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 16px; }
+.termMade { line-height: 1.5; }
+.term .fields { margin: 0 0 22px; }
+@media (prefers-reduced-motion: reduce) { .term { transition: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .term summary::after { transition: transform 0.25s ease-out; }
+  /* The opened part eases in instead of snapping. */
+  .term[open] .fields { animation: termOpen 0.28s ease-out; }
+}
+
+/* Reading: when the books were written, then the index by author. */
+.reread { color: var(--accent); }
+.key { font-size: 0.9em; margin-bottom: 20px; }
+.key .reread::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); margin-right: 9px; }
+
+.written { display: flex; align-items: flex-end; border-bottom: 0; margin-top: 8px; }
+.writtenCol { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; }
+.writtenGap { margin-left: 10px; }
+.writtenDots { display: flex; flex-direction: column-reverse; align-items: center; gap: 3px; padding-bottom: 6px; width: 100%; border-bottom: 1px solid var(--white); }
+.writtenLabel { font-family: var(--mono); font-size: 11px; color: var(--grey); margin-top: 4px; white-space: nowrap; }
+.dot { width: 10px; height: 10px; max-width: 100%; padding: 0; border: 0; border-radius: 50%; background: var(--white); cursor: pointer; position: relative; }
+.dot::after { content: ""; position: absolute; inset: -4px -2px; } /* larger touch area */
+.dotReread { background: var(--accent); }
+.dot:hover, .dot[aria-pressed="true"] { outline: 2px solid var(--accent); outline-offset: 2px; transform: translateY(-3px); }
+.writtenCaption span { display: inline-block; }
+@media (prefers-reduced-motion: no-preference) {
+  .dot { transition: transform 0.15s ease-out; }
+  .writtenCaption span { animation: captionIn 0.25s ease-out; }
+}
+@keyframes termOpen { from { opacity: 0; transform: translateY(-8px); } }
+@keyframes captionIn { from { opacity: 0; transform: translateY(3px); } }
+.writtenCaption { margin-top: 10px; min-height: 3em; font-size: 0.92em; line-height: 1.45; }
+
+.index { margin-top: 28px; columns: 2; column-gap: 36px; font-size: 0.88em; line-height: 1.45; }
+.indexLetter { margin-bottom: 14px; }
+.indexLetter h3 { font-weight: 600; font-size: 1em; margin-bottom: 2px; break-after: avoid; }
+.indexLetter li { padding-left: 1.2em; text-indent: -1.2em; break-inside: avoid; margin-bottom: 3px; }
+@media (max-width: 560px) {
+  .index { columns: 1; font-size: 0.95em; }
+  .dot { width: 8px; height: 8px; }
+  .writtenGap { margin-left: 6px; }
+  .writtenCol:nth-child(2) .writtenLabel { visibility: hidden; } /* no room for "1600" beside "BC" */
+}
+
+/* Projects: the map of fields, then each project led by one number. */
+.map { width: 100%; height: auto; display: block; overflow: visible; }
+.mapField { font-size: 22px; fill: var(--grey); letter-spacing: 0.02em; }
+.mapFieldLit { fill: var(--accent); }
+.mapLine { stroke: var(--accent); stroke-width: 1.5; }
+.mapNode { cursor: pointer; outline: none; }
+.mapNode circle { fill: var(--ground); stroke: var(--white); stroke-width: 1.5; }
+.mapNode text { font-size: 16px; fill: var(--white); pointer-events: none; }
+.mapNodeOn circle, .mapNode:focus-visible circle { fill: var(--accent); stroke: var(--accent); }
+.mapNodeOn text, .mapNode:focus-visible text { fill: var(--ground); }
+.mapCaption { min-height: 3.2em; margin: 6px 0 26px; text-align: center; line-height: 1.45; color: var(--accent); text-wrap: balance; }
+.mapCaption span { display: inline-block; }
+
+.lead { border-top: 1px solid color-mix(in srgb, var(--white) 22%, transparent); scroll-margin-top: 12px; }
+.lead summary { list-style: none; cursor: pointer; padding: 28px 0; display: grid; gap: 10px; }
+.lead summary::-webkit-details-marker { display: none; }
+.leadNo {
+  display: inline-grid; place-items: center; width: 1.9em; height: 1.9em; border: 1px solid var(--white); border-radius: 50%;
+  font-size: 0.72em; line-height: 1; margin-right: 0.7em; vertical-align: 0.12em;
+}
+.lead .leadNo { margin: 0; font-size: 0.74em; }
+.leadOn .leadNo { background: var(--accent); border-color: var(--accent); color: var(--ground); }
+.leadBig { font-size: clamp(2.5em, 11vw, 4em); line-height: 1; font-weight: 600; letter-spacing: -0.02em; white-space: nowrap; }
+.leadBig small { display: block; margin-top: 12px; font-family: var(--mono); font-size: 12.5px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey); white-space: normal; line-height: 1.4; }
+.leadQuestion { color: var(--grey); line-height: 1.45; }
+.leadBody { padding-bottom: 30px; }
+.leadBody .figure { margin: 18px 0 4px; }
+.cards li { scroll-margin-top: 12px; }
+@media (prefers-reduced-motion: no-preference) {
+  .lead[open] .leadBody { animation: termOpen 0.28s ease-out; }
+  .mapCaption span { animation: captionIn 0.25s ease-out; }
+  .mapNode circle { transition: fill 0.15s; }
+}
+@media (max-width: 560px) { .mapField { font-size: 27px; } .mapNode text { font-size: 21px; } }

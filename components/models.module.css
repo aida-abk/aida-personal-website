@@ -1,0 +1,2 @@
+.canvas { width: 100%; display: block; touch-action: pan-y; margin-top: 1.4em; }
+.caption { min-height: 3.4em; text-align: center; color: var(--grey); }

@@ -1,0 +1,49 @@
+.page { padding-bottom: 96px; }
+.label, .no { display: block; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey); }
+
+.top { max-width: var(--wide); margin: 0 auto; padding: clamp(56px, 12vh, 120px) 24px clamp(36px, 7vh, 64px); }
+/* The name alone is set in Prata. */
+.name { font-family: var(--font-name), serif; font-size: clamp(2.6em, 9.5vw, 6.2em); line-height: 1.02; margin-bottom: 26px; }
+/* The line under the name is a sentence, so it is set in the text face. */
+.aside { margin: -6px 0 22px; font-size: clamp(1.1em, 2vw, 1.35em); line-height: 1.25; }
+.line { font-size: 17px; color: var(--grey); }
+.headline { margin-top: 22px; max-width: 22em; font-size: clamp(1.25em, 2.4vw, 1.7em); line-height: 1.22; font-weight: 500; text-wrap: balance; }
+
+/* Hermann grid: black squares on white lines. The atlas plate is one square. */
+.grid { max-width: var(--wide); margin: 0 auto; background: var(--white); padding: var(--line); display: grid; gap: var(--line); grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid > ol { display: contents; }
+.grid li, .plate { background: var(--ground); min-height: 230px; }
+.plate { grid-column: span 2; padding: 22px; display: grid; align-items: center; }
+.plate figure { max-width: none; margin: 0; }
+.wide { grid-column: span 2; }
+.grid li > a:only-child { height: 100%; padding: 20px; display: flex; flex-direction: column; text-decoration: none; background: none; }
+.chapter { margin-top: auto; font-size: 1.75em; line-height: 1.1; font-weight: 600; }
+.grid li > a:hover .chapter, .grid li > a:focus-visible .chapter { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.18em; }
+.under { margin-top: 10px; display: grid; gap: 4px; font-size: 0.78em; line-height: 1.4; color: var(--grey); }
+.links { padding: 20px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 6px; font-family: var(--mono); font-size: 13px; overflow-wrap: anywhere; }
+
+/* Today and Background, on the white of the grid's lines. */
+.panel {
+  max-width: var(--wide); margin: var(--line) auto 0; background: var(--white); color: var(--ground);
+  display: grid; grid-template-columns: 1fr 1.6fr; gap: clamp(24px, 5vw, 64px); padding: clamp(28px, 6vh, 56px) clamp(20px, 4vw, 48px);
+}
+/* Its two headings, in the text face at the weight of the chapter titles. */
+.panelHead { font-size: 1.45em; line-height: 1.1; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 12px; }
+.panel p + p { margin-top: 0.8em; }
+.panel :focus-visible { outline-color: var(--ground); }
+
+/* The checkerboard strip from Aida's slides. */
+.checker { max-width: var(--wide); margin: 56px auto 0; height: 28px; background: repeating-conic-gradient(var(--white) 0 25%, var(--ground) 0 50%) 0 0 / 28px 28px; }
+
+.stream { max-width: var(--wide); margin: 0 auto; padding: 48px 24px 0; }
+.streamHead { font-size: clamp(1.8em, 4vw, 2.6em); font-weight: 600; letter-spacing: -0.01em; margin-bottom: 26px; }
+.streamHead a { text-decoration: none; }
+
+@media (max-width: 760px) {
+  .grid { --line: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0 10px; }
+  .grid li, .plate { min-height: 150px; }
+  .plate { padding: 14px; }
+  .chapter { font-size: 1.3em; }
+  .panel { grid-template-columns: 1fr; margin: 10px 10px 0; }
+  .checker { margin-left: 10px; margin-right: 10px; }
+}

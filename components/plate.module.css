@@ -1,0 +1,4 @@
+/* The dot plate and the credit under it. */
+.plate { max-width: 420px; margin: 64px auto 0; }
+.plate canvas { display: block; width: 100%; touch-action: pan-y; }
+.plate figcaption { margin-top: 14px; font-size: 0.72em; line-height: 1.45; color: var(--grey); text-wrap: balance; }

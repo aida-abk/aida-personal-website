@@ -13,7 +13,7 @@ export const person = {
 
 // The words in `link` point to `href`.
 export const today = {
-  text: "I lead the neuroimaging processing team in the Movement Disorders Program at Rhode Island Hospital, and I'm studying trajectory inference and statistical neuroscience at Brown.",
+  text: "I lead the neuroimaging processing team in the Movement Disorders Program at Rhode Island Hospital, and I'm working on LFP dynamics, studying cell trajectory inference and statistical neuroscience, learning medtech commercialization through the NEMIC medtech fellowship, and launching Brown Neurotech. I think biological dynamics is fascinating.",
   link: "Movement Disorders Program",
   href: "https://neurology.med.brown.edu/clinical-divisions/movement-disorders",
 };

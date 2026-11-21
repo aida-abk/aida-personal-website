@@ -37,6 +37,9 @@ export const trajectoryRefs: Record<string, string> = {
   "CSCI 0111": "https://cs.brown.edu/courses/csci0111/",
   "FullStack@Brown": "https://www.fullstackatbrown.com/",
   "Alhusaini Lab": "https://vivo.brown.edu/display/salhusai",
+  "Asaad Lab": "https://sites.brown.edu/asaad/",
+  "Computational Neuroscience Departmental Undergraduate Group": "https://www.browncompneuro.com/",
+  "Computational Neuroscience DUG": "https://www.browncompneuro.com/",
 };
 
 // The essay has no linked phrases yet. Add them here, as above.

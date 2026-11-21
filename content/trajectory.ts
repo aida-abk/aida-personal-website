@@ -11,7 +11,7 @@ export type Term = {
   threads?: string[]; // which of the threads this term carries
 };
 
-// The six threads, in the order they appear. Fall 2026 carries all of them.
+// The six threads, in the order they appear. Fall 2026 and Spring 2027 carry all of them.
 export const threads = ["rehabilitation", "perception-action", "neuroimaging", "decision-making", "abstract sequences", "signal processing"];
 
 export const columns = {
@@ -84,8 +84,14 @@ export const terms: Term[] = [
     term: "Fall 2026",
     courses: "Statistical Neuroscience (graduate); Computational Probability and Statistics; Multivariable Calculus with Theory; Structure of the Nervous System; Genetics",
     made: ["Directed Reading Program project"],
-    also: ["Joined the Radiation Physics Instrumentation Lab at Massachusetts General Hospital (October); NEMIC Health Innovator Pathways fellow; MAPS peer mentor; attended NYBCI 2026; co-founding Brown Neurotech, launching spring 2027"],
+    also: ["Joined the Radiation Physics Instrumentation Lab at Massachusetts General Hospital (October); NEMIC Health Innovator Pathways fellow; leading the Computational Neuroscience Departmental Undergraduate Group; MAPS peer mentor; attended NYBCI 2026"],
     thread: ["converges on BCI"],
+    threads: threads,
+  },
+  {
+    term: "Spring 2027",
+    also: ["Joining the Asaad Lab to study how microperturbations delivered through electrodes map to behavior; launching Brown Neurotech"],
+    thread: ["BCI"],
     threads: threads,
   },
 ];
